@@ -82,3 +82,6 @@ chmod +x $exedir/tom_pkmn
 # delete temp directory
 echo "Cleaning up temp file."
 rm -rf temp
+
+echo "Installation sucessful."
+echo "Might need to set an alias for the browser to work. More info to come?"
