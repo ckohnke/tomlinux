@@ -1,31 +1,51 @@
 #!/bin/bash
 
-set -eu -o pipefail # fail on error , debug all lines
+# usage
+usage()
+{
+    echo "    usage: install.sh [[TOM file to extract and install]]"
+    exit
+}
 
-sudo -n true
-test $? -eq 0 || exit 1 "you should have sudo priveledge to run this script"
 
-echo installing the must-have pre-requisites
-while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
-    perl
-    zip unzip
-    exuberant-ctags
-    mutt
-    libxml-atom-perl
-    postgresql-9.6
-    libdbd-pgsql
-    curl
-    wget
-    libwww-curl-perl
-EOF
-)
+# get command line arguement (zip or msi file)
+if [ "$1" != "" ]; then
+  fn=$1
+  echo 'extracting file:' $fn
+else
+  usage
+fi
 
-echo installing the nice-to-have pre-requisites
-echo you have 5 seconds to proceed ...
-echo or
-echo hit Ctrl+C to quit
-echo -e "\n"
-sleep 6
+zip=0
+msi=0
+if [[ $fn == *".msi" ]]; then
+  msi=1
+  echo "msi file detected! Unsupported."
+  usage
+fi
+if [[ $fn == *".zip" ]]; then
+  zip=1
+  echo "zip archive detected! Extracting."
+fi
 
-sudo apt-get install -y tig
+
+# Check dependencies
+#echo installing the must-have pre-requisites
+#while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
+#    zip unzip
+#EOF
+#)
+
+# extract zip or msi to a temp directory
+
+# Grab the jars
+
+# Move jars to a directory (default: /usr/share/tom)
+
+# delete temp directory
+
+# Create a command in the PATH to launch (default: /usr/bin/tom)
+# java -jar pathtojars/TOM.jar
+
+# Cleanup
 
