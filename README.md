@@ -1,5 +1,5 @@
 # tomlinux
-A very basic install script for TOM on Linux. It first extracts the Java jar files from TOM_latest_MAC.zip, installs them in the user's perferred location, and creates the command 'tom_pkmn' in $PATH (location specified by user) that executes the . 
+A very basic install script for TOM on Linux. It first extracts the Java jar files from TOM_latest_MAC.zip, installs them in the user's perferred location, and creates the command 'tom_pkmn' in $PATH (location specified by user) that launches TOM. 
 
 This TOM install script for Linux is unofficial and is no way associated with the good people who spend their time making TOM. The only official version of TOM are for Windows and Mac OS. This software comes with no warranty, explicit or implcit, and is provided "as is" with the expectation that the end user will "use it at their own risk."
 
