@@ -21,3 +21,9 @@ TOM may refuse to open a html viewer (firefox, chrome, etc.) on Linux. If you ha
     sudo ln -s /usr/bin/xdg-open /usr/bin/netscape
 
 xdg-open is used to open the default browser, and netscape is what TOM tries to use. If your distro uses a different command for opening the default browser, then the xdg-open command will need to be changed.
+
+Alternatively, add something like
+
+    alias netscape=firefox
+
+to your .bashrc file.
