@@ -42,7 +42,7 @@ fi
 
 # extract zip or msi to a temp directory
 echo "ERROR: Unzipping the archive."
-unzip $fn -d -q temp
+unzip $fn -d temp
 
 # Grab the jars
 # Move jars to a directory (default: /usr/share/TOM)
